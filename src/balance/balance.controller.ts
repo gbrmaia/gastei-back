@@ -11,8 +11,13 @@ export class BalanceController {
     return this.balanceService.getBalance(userId);
   }
 
-  @Post()
+  @Post('createBalance')
   async setBalance(@Body() createBalanceDto: CreateBalanceDto) {
     return this.balanceService.setBalance(createBalanceDto);
+  }
+
+  @Post('addBalance')
+  async addBalance(@Body() createBalanceDto: CreateBalanceDto) {
+    return this.balanceService.addBalance(createBalanceDto);
   }
 }
